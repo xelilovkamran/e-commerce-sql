@@ -153,7 +153,6 @@ INSERT INTO Accounts (AccountID, AccountHolder, Balance) VALUES
 
 --------------------------------------------------------------------------------------
 
--- TASK 1
 SELECT
     c.CustomerName,
     COUNT(o.OrderID) AS TotalOrders,
@@ -169,7 +168,6 @@ GROUP BY
 ORDER BY
     c.CustomerName;
 
--- TASK 2
 WITH StudentAverageGrades AS (
     SELECT
         e.StudentID,
@@ -195,7 +193,6 @@ FROM
 GROUP BY
     sag.StudentName, c.CourseName, sag.AverageGrade;
 
--- TASK 3
 SELECT
     a.ArticleID,
     a.Title,
@@ -209,11 +206,9 @@ ORDER BY
     a.PublishedDate DESC
 LIMIT 10;
 
--- TASK 4
 CREATE INDEX idx_articles_publisheddate ON Articles (PublishedDate);
 CREATE INDEX idx_comments_articleid ON Comments (ArticleID);
 
--- TASK 5
 DELIMITER //
 CREATE PROCEDURE TransferFunds(
     IN p_FromAccountID INT,
